@@ -5,12 +5,15 @@
  * For more details take a look at the Java Quickstart chapter in the Gradle
  * user guide available at https://docs.gradle.org/3.3/userguide/tutorial_java_projects.html
  */
-plugins {
-  id 'net.researchgate.release' version '2.5.0'
+buildscript{
+    dependencies{
+        classpath files('/Users/guillaume/AdvancedSchema/external/Gradle/gradle-release/build/libs/gradle-release-2.5.1-SNAPSHOT-GUILLAUME.jar')   
+    }
 }
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: net.researchgate.release.ReleasePlugin
 
 
 // In this section you declare where to find the dependencies of your project
@@ -28,3 +31,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+release {
+  git {
+    signTag = true
+  }
+}
