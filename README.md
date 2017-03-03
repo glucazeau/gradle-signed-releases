@@ -1,5 +1,1 @@
-# gradle-signed-releases
-
-Add text
-texttest
-test
+#0.0.3
