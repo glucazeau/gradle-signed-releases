@@ -33,6 +33,6 @@ dependencies {
 
 release {
   git {
-    signTag = true
+    signTag = false
   }
 }
